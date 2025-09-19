@@ -1,9 +1,14 @@
-version: '3.8'
+name: ttrpg-copilot
 services:
-  copilot:
-    build: .
+  pgvector-db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ttrpg
     ports:
-      - "5000:5000"
+      - "5432:5432"
     volumes:
-      - .:/app
-    
+        - postgres_data:/var/lib/postgresql/data
+        - ./init:/docker-entrypoint-initdb.d
+volumes:
+  postgres_data:
