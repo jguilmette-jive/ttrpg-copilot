@@ -3,5 +3,7 @@ fastapi~=0.116.1
 llama-index-core~=0.14.1
 llama-index-embeddings-huggingface~=0.6.1
 llama-index-llms-openai~=0.5.6
+llama-index-llms-openrouter~=0.4.2
 pgvector~=0.4.1
 openai~=1.107.1
+pydantic-settings~=2.10.1
